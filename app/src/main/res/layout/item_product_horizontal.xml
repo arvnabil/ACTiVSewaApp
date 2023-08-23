@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_180sdp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:elevation="@dimen/_10sdp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivPoster"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_180sdp"
+                android:background="@drawable/roundedimage"
+                android:contentDescription="@string/perangkat_sewa"
+                android:scaleType="fitXY"
+                tools:src="@drawable/iv_logigroup" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_italic"
+            android:gravity="center_vertical"
+            android:textColor="@color/darkPrimary"
+            android:textSize="@dimen/_16sdp"
+            tools:ignore="SpUsage"
+            tools:text="Logitech Group" />
+        <TextView
+            android:id="@+id/tvDurasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:textColor="@color/variantPrimary"
+            android:textSize="@dimen/_16sdp"
+            tools:ignore="SpUsage"
+            tools:text="Durasi 2 Hari" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/labelStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:background="@drawable/label_status_white_background"
+        android:elevation="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:background="@drawable/transparent_rect"
+            android:textColor="@color/darkPrimary"
+            android:text="Tersedia"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

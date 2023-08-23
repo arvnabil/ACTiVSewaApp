@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/accentPrimary"
+    tools:context=".ui.customer.profile.ProfileFragment">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF">
+
+        <ImageView
+            android:id="@+id/ivPicture"
+            android:layout_marginTop="26dp"
+            android:src="@drawable/ic_picture_empty"
+            android:layout_width="110dp"
+            android:layout_height="110dp"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:text="Nabil"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            style="@style/TextView.PoppinsMediumD20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:text="nabil@activ.co.id"
+            style="@style/TextView.PoppinsNormal16sp"
+            android:textColor="@color/darkPrimary"
+            android:layout_marginBottom="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnKeluar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/shape_rectangle_button_primary"
+        android:backgroundTint="@color/dangerPrimary"
+        android:text="@string/keluar"
+        android:textColor="@color/white" />
+</LinearLayout>

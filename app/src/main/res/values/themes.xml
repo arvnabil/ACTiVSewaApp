@@ -1,0 +1,86 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- Base application theme. -->
+<style name="Theme.ACTiVSewa" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <!-- Primary brand color. -->
+    <item name="android:statusBarColor" tools:targetApi="l">@color/primary</item>
+    <item name="colorPrimary">@color/darkPrimary</item>
+    <item name="colorPrimaryVariant">@color/variantPrimary</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <!-- Secondary brand color. -->
+    <item name="colorSecondary">@color/colorSecondary</item>
+    <item name="colorSecondaryVariant">@color/colorSecondary</item>
+    <item name="colorOnSecondary">@color/white</item>
+    <!-- Customize your theme here. -->
+</style>
+<style name="Theme.ACTiVSewa.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">18sp</item>
+</style>
+<style name="Theme.ACTiVSewa.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+</style>
+<style name="Theme.ACTiVSewa.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+<style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">18sp</item>
+</style>
+<style name="TextView"/>
+    <style name="TextView.PoppinsNormalW14sp">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextView.PoppinsNormalD20sp">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/darkPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextView.PoppinsMediumD22sp">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/darkPrimary</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="TextView.PoppinsMediumD20sp">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/darkPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextView.PoppinsMediumD18sp">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/darkPrimary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextView.PoppinsBoldD24sp">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/darkPrimary</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextView.PoppinsNormal18sp">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="TextView.PoppinsNormal16sp">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="TextView.PoppinsNormal14sp">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+</resources>
+
+
+
+
+

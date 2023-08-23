@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_sales"
+    app:startDestination="@+id/navigation_dashboard_sales">
+
+    <fragment
+        android:id="@+id/navigation_dashboard_sales"
+        android:name="com.activ.activsewa.ui.sales.dashboard_sales.DashboardSalesFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_dashboard_sales" >
+        <action
+            android:id="@+id/action_navigation_dashboard_sales_to_navigation_transaction"
+            app:destination="@id/navigation_transaction" />
+        <action
+            android:id="@+id/action_navigation_dashboard_sales_to_customerFragment"
+            app:destination="@id/customerFragment" />
+    </fragment>
+
+     <fragment
+        android:id="@+id/navigation_transaction"
+        android:name="com.activ.activsewa.ui.sales.transaction.TransactionFragment"
+        android:label="@string/transaction"
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_navigation_transaction_to_fragmentDetailTransaction"
+            app:destination="@id/fragmentDetailTransaction" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailTransaction"
+        android:name="com.activ.activsewa.ui.sales.detail.DetailTransactionFragment"
+        tools:layout="@layout/fragment_detail_transaction">
+
+        <argument
+            android:name="data"
+            app:argType="com.activ.activsewa.model.response.transaction.Data"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_fragmentDetailTransaction_to_detailPenyewaFragment"
+            app:destination="@id/detailPenyewaFragment" />
+        <action
+            android:id="@+id/action_fragmentDetailTransaction_to_verificationDataFragment"
+            app:destination="@id/verificationDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.activ.activsewa.ui.customer.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailPenyewaFragment"
+        android:name="com.activ.activsewa.ui.sales.detail.DetailPenyewaFragment"
+        android:label="fragment_detail_penyewa"
+        tools:layout="@layout/fragment_detail_penyewa">
+        <argument
+            android:name="data"
+            app:argType="com.activ.activsewa.model.response.transaction.Data"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationDataFragment"
+        android:name="com.activ.activsewa.ui.sales.verification_data.VerificationDataFragment"
+        android:label="fragment_verification_data"
+        tools:layout="@layout/fragment_verification_data" >
+        <argument
+            android:name="data"
+            app:argType="com.activ.activsewa.model.response.transaction.Data"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_verificationDataFragment_to_successSetujuiVerificationFragment"
+            app:destination="@id/successSetujuiVerificationFragment" />
+        <action
+            android:id="@+id/action_verificationDataFragment_to_successTolakVerificationFragment"
+            app:destination="@id/successTolakVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successTolakVerificationFragment"
+        android:name="com.activ.activsewa.ui.success.SuccessTolakVerificationFragment"
+        android:label="fragment_success_tolak_verification"
+        tools:layout="@layout/fragment_success_tolak_verification" />
+    <fragment
+        android:id="@+id/successSetujuiVerificationFragment"
+        android:name="com.activ.activsewa.ui.success.SuccessSetujuiVerificationFragment"
+        android:label="fragment_success_setujui_verification"
+        tools:layout="@layout/fragment_success_setujui_verification" />
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.activ.activsewa.ui.sales.customers.CustomerFragment"
+        android:label="fragment_penyewa"
+        tools:layout="@layout/fragment_penyewa" />
+</navigation>

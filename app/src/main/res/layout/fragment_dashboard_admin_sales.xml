@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accentPrimary"
+    tools:context=".ui.adminsales.dashboard_admin_sales.DashboardAdminSalesFragment">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/layout_toolbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_49sdp"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_48sdp">
+
+            <TextView
+                android:id="@+id/txtHalo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/TextView.PoppinsNormal18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginStart="24dp"
+                android:text="@string/halo_nabil"
+                tools:layout_editor_absoluteX="24dp" />
+
+            <TextView
+                android:id="@+id/txtSelamatDatang"
+                style="@style/TextView.PoppinsMediumD22sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/selamat_datang_kembali"
+                app:layout_constraintTop_toBottomOf="@+id/txtHalo" />
+
+            <LinearLayout
+                android:id="@+id/lnView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/txtSelamatDatang">
+                <ImageView
+                    android:id="@+id/btnPenyewa"
+                    android:elevation="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_88sdp"
+                    android:src="@drawable/iconcustomer"
+                    />
+                <ImageView
+                    android:id="@+id/btnTransaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_10sdp"
+                    android:foregroundGravity="right"
+                    android:src="@drawable/icontransaction"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lnView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/lnView">
+                <ImageView
+                    android:id="@+id/btnProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_88sdp"
+                    android:elevation="@dimen/_10sdp"
+                    android:src="@drawable/iconproduct"
+                    />
+                <ImageView
+                    android:id="@+id/btnBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:foregroundGravity="right"
+                    android:src="@drawable/iconbrand"
+                    />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

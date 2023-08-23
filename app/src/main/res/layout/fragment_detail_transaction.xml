@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/accentPrimary"
+    tools:context=".ui.customer.detail.DetailTransactionFragment">
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/layout_toolbar_detail_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:paddingBottom="@dimen/_48sdp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProductList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_product_card_trash" />
+
+            <TextView
+                android:id="@+id/tvNoTransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_200sdp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="@string/produk_tidak_tersedia"
+                android:textColor="@color/darkPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTotalSewa"
+                style="@style/TextView.PoppinsMediumD20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:background="@drawable/shape_rectangle_button_white_rounded"
+                android:elevation="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="Total Sewa : Rp1,600,000"
+                app:layout_constraintTop_toBottomOf="@+id/rvProductList"
+                tools:layout_editor_absoluteX="24dp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:background="@drawable/shape_rectangle_button_white_rounded"
+                android:elevation="@dimen/_3sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalSewa"
+                tools:layout_editor_absoluteX="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvDetailPenyewa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/poppins_italic"
+                        android:text="@string/detail_data_penyewa"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/btnLihatDataPenyewa"
+                        style="@style/TextView.PoppinsNormal16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/lihat_data"
+                        android:textColor="@color/darkPrimary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.89"
+                        app:layout_constraintStart_toEndOf="@+id/tvDetailPenyewa"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.132"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/txtStatusVerification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/poppins_italic"
+                        android:text="@string/status_verifikasi"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailPenyewa"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tvStatusVerifikasi"
+                        style="@style/TextView.PoppinsNormal16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/disetujui"
+                        android:textColor="@color/darkPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtStatusVerification"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:background="@drawable/shape_rectangle_button_white_rounded"
+                android:elevation="@dimen/_3sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:layout_editor_absoluteX="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvDetailPembayaran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/poppins_italic"
+                        android:text="@string/detail_pembayaran"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/btnLihatDataPembayaran"
+                        style="@style/TextView.PoppinsNormal16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/lihat_data"
+                        android:textColor="@color/darkPrimary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.89"
+                        app:layout_constraintStart_toEndOf="@+id/tvDetailPembayaran"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.132"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/labelTglSewa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/poppins_italic"
+                        android:text="@string/tanggal_mulai_sewa"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailPembayaran"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tvTglSewa"
+                        style="@style/TextView.PoppinsNormal16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/_20_aug_2022"
+                        android:textColor="@color/darkPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelTglSewa"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/labelUrlPembayaran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/poppins_italic"
+                        android:text="@string/url_pembayaran"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTglSewa"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tvUrlPembayaran"
+                        style="@style/TextView.PoppinsNormal16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:autoLink="web"
+                        android:text="@string/link_url"
+                        android:textColor="@color/darkPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelUrlPembayaran"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/labelStatusPembayaran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:fontFamily="@font/poppins_italic"
+                        android:text="@string/status_pembayaran"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUrlPembayaran"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/tvStatusPembayaran"
+                        style="@style/TextView.PoppinsNormal16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/lunas"
+                        android:textColor="@color/darkPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelStatusPembayaran"
+                        tools:ignore="RtlHardcoded,SpUsage" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHubungiSales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:background="@drawable/shape_rectangle_button_primary"
+                android:backgroundTint="@color/primary"
+                android:text="@string/hubungi_sales"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                tools:layout_editor_absoluteX="24dp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCetak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:background="@drawable/shape_rectangle_button_dark_primary"
+                android:backgroundTint="@color/darkPrimary"
+                android:text="@string/cetak_tagihan"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/btnHubungiSales"
+                tools:layout_editor_absoluteX="24dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

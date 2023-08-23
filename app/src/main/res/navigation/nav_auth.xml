@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/fragmentMasuk">
+
+    <fragment android:id="@+id/fragmentMasuk"
+        android:name="com.activ.activsewa.ui.auth.masuk.MasukFragment"
+        tools:layout="@layout/fragment_masuk">
+        <action android:id="@+id/action_daftar"
+            app:destination="@id/fragmentDaftar"/>
+        <action android:id="@+id/action_lupa_password"
+            app:destination="@id/fragmentLupaPassword"/>
+    </fragment>
+    <fragment android:id="@+id/fragmentDaftar"
+        android:name="com.activ.activsewa.ui.auth.daftar.DaftarFragment"
+        tools:layout="@layout/fragment_daftar">
+        <action android:id="@+id/action_success_daftar"
+            app:destination="@id/fragmentSuccessDaftar"/>
+        <action android:id="@+id/action_lupa_password"
+            app:destination="@id/fragmentLupaPassword"/>
+    </fragment>
+    <fragment android:id="@+id/fragmentLupaPassword"
+        android:name="com.activ.activsewa.ui.auth.lupa_password.LupaPasswordFragment"
+        tools:layout="@layout/fragment_lupa_password">
+        <action android:id="@+id/action_masuk"
+            app:destination="@id/fragmentMasuk"/>
+    </fragment>
+    <fragment android:id="@+id/fragmentSuccessDaftar"
+        android:name="com.activ.activsewa.ui.success.SuccessDaftarFragment"
+        tools:layout="@layout/fragment_success_daftar">
+    </fragment>
+
+</navigation>

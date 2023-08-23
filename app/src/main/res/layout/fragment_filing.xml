@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/accentPrimary"
+    tools:context=".ui.customer.filing.FilingFragment">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/layout_toolbar_pengajuan"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:paddingBottom="@dimen/_48sdp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProductList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_product_card_trash" />
+
+    <TextView
+        android:id="@+id/tvNoPerangkat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_200sdp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="@string/produk_tidak_tersedia"
+        android:textColor="@color/darkPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotalSewa"
+        android:visibility="gone"
+        style="@style/TextView.PoppinsMediumD20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        android:background="@drawable/shape_rectangle_button_white_rounded"
+        android:elevation="@dimen/_5sdp"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Total Sewa : Rp1,600,000"
+        app:layout_constraintTop_toBottomOf="@+id/rvProductList"
+        tools:layout_editor_absoluteX="24dp" />
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalSewa"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtVerifikasiData"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="@font/poppins"
+                android:text="Verifikasi Data Penyewa"
+                android:textColor="@color/darkPrimary"
+                android:textSize="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalSewa"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="RtlHardcoded,SpUsage" />
+            <TextView
+                android:id="@+id/txtNama"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nama"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/etNama"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtNik"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nik"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/etNik"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtNPWP"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/npwp"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/etNPWP"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtTelp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/telepon"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/etTelp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtAlamat"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alamat_lengkap"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                tools:ignore="TextViewEdits" />
+
+            <EditText
+                android:id="@+id/etAlamat"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:inputType="text|textMultiLine"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnVerifikasi"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MULAI VERIFIKASI"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_rectangle_button_primary"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvNoFiling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_200sdp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="@string/pengajuan_tidak_tersedia"
+            android:textColor="@color/darkPrimary"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

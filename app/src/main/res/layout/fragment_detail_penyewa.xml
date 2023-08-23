@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/accentPrimary"
+    tools:context=".ui.customer.detail.DetailPenyewaFragment">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/layout_toolbar_detail_penyewa"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nama"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/editNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:editable="false"
+                android:focusable="false"
+                android:backgroundTint="#FFeaeaea"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtNik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nik"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/etNik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:editable="false"
+                android:focusable="false"
+                android:backgroundTint="#FFeaeaea"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtNPWP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/npwp"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/etNPWP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:editable="false"
+                android:focusable="false"
+                android:backgroundTint="#FFeaeaea"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtTelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/telepon"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"/>
+
+            <EditText
+                android:id="@+id/etTelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:editable="false"
+                android:focusable="false"
+                android:backgroundTint="#FFeaeaea"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/txtAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alamat_lengkap"
+                android:textColor="@color/darkPrimary"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
+                tools:ignore="TextViewEdits" />
+
+            <EditText
+                android:id="@+id/etAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:editable="false"
+                android:focusable="false"
+                android:backgroundTint="#FFeaeaea"
+                android:inputType="text|textMultiLine"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_input"
+                android:padding="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDaftar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/buat_akun_baru"
+                android:visibility="gone"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_rectangle_button_primary"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

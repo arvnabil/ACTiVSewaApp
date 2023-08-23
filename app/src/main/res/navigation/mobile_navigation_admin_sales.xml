@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_admin_sales"
+    app:startDestination="@+id/navigation_dashbord_admin_sales">
+
+    <fragment
+        android:id="@+id/navigation_dashbord_admin_sales"
+        android:name="com.activ.activsewa.ui.adminsales.dashboard_admin_sales.DashboardAdminSalesFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_dashboard_admin_sales" >
+
+        <action
+            android:id="@+id/action_navigation_dashbord_admin_sales_to_navigation_transaction2"
+            app:destination="@id/navigation_transaction" />
+        <action
+            android:id="@+id/action_navigation_dashbord_admin_sales_to_customerFragmentAdminSales2"
+            app:destination="@id/customerFragmentAdminSales" />
+        <action
+            android:id="@+id/action_navigation_dashbord_admin_sales_to_brandFragment"
+            app:destination="@id/brandFragment" />
+        <action
+            android:id="@+id/action_navigation_dashbord_admin_sales_to_productFragment"
+            app:destination="@id/adminSalesProductFragment" />
+        <action
+            android:id="@+id/action_navigation_dashbord_admin_sales_to_adminSalesProductFragment"
+            app:destination="@id/adminSalesProductFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_transaction"
+        android:name="com.activ.activsewa.ui.adminsales.transaction.TransactionFragment"
+        android:label="@string/transaction"
+        tools:layout="@layout/fragment_transaction" >
+
+
+        <action
+            android:id="@+id/action_navigation_transaction_to_fragmentDetailTransactionAdminSales"
+            app:destination="@id/fragmentDetailTransactionAdminSales" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailTransactionAdminSales"
+        android:name="com.activ.activsewa.ui.adminsales.detail.DetailTransactionFragment"
+        tools:layout="@layout/fragment_detail_transaction">
+
+        <argument
+            android:name="data"
+            app:argType="com.activ.activsewa.model.response.transaction.Data"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_fragmentDetailTransactionAdminSales_to_adminSalesDetailPenyewaFragment"
+            app:destination="@id/adminSalesDetailPenyewaFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.activ.activsewa.ui.customer.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/customerFragmentAdminSales"
+        android:name="com.activ.activsewa.ui.adminsales.customers.CustomerFragment"
+        android:label="fragment_customer_admin_sales"
+        tools:layout="@layout/fragment_customer_admin_sales" />
+    <fragment
+        android:id="@+id/adminSalesDetailPenyewaFragment"
+        android:name="com.activ.activsewa.ui.adminsales.detail.AdminSalesDetailPenyewaFragment"
+        android:label="AdminSalesDetailPenyewaFragment" >
+        <argument
+            android:name="data"
+            app:argType="com.activ.activsewa.model.response.transaction.Data"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+    <fragment
+        android:id="@+id/brandFragment"
+        android:name="com.activ.activsewa.ui.adminsales.brand.BrandFragment"
+        android:label="fragment_brand"
+        tools:layout="@layout/fragment_brand" >
+        <action
+            android:id="@+id/action_brandFragment_to_tambahBrandFragment"
+            app:destination="@id/tambahBrandFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahBrandFragment"
+        android:name="com.activ.activsewa.ui.adminsales.brand.TambahBrandFragment"
+        android:label="fragment_tambah_brand"
+        tools:layout="@layout/fragment_tambah_brand" >
+    </fragment>
+    <fragment
+        android:id="@+id/adminSalesProductFragment"
+        android:name="com.activ.activsewa.ui.adminsales.product.AdminSalesProductFragment"
+        android:label="fragment_product_admin_sales"
+        tools:layout="@layout/fragment_product_admin_sales" >
+        <action
+            android:id="@+id/action_adminSalesProductFragment_to_detailProductFragment2"
+            app:destination="@id/detailProductFragment2" />
+        <action
+            android:id="@+id/action_adminSalesProductFragment_to_tambahProdukFragment"
+            app:destination="@id/tambahProdukFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailProductFragment2"
+        android:name="com.activ.activsewa.ui.adminsales.detail.DetailProductFragment"
+        android:label="fragment_detail_product_admin_sales"
+        tools:layout="@layout/fragment_detail_product_admin_sales" >
+        <argument
+            android:name="data"
+            app:argType="com.activ.activsewa.model.response.home.Data"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahProdukFragment"
+        android:name="com.activ.activsewa.ui.adminsales.product.TambahProdukFragment"
+        android:label="fragment_tambah_produk"
+        tools:layout="@layout/fragment_tambah_produk" />
+</navigation>
